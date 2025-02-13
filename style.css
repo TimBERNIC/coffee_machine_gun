@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: white;
+}
+#globalBox {
+    background-color: whitesmoke;
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#machine{
+    background-color: grey;
+    height: 25% ;
+   width: 300px;
+    border: solid 2px black;
+    border-radius: 20px;
+    box-shadow: 10px 0 10px 0 ;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#preparationBox{
+    height: 50%;
+    border-bottom: solid black ;
+    display: flex;
+
+}
+
+#waterBoil{
+    height: 90%;
+    width: 50%;
+    margin: 5px;
+    background-color: aqua;
+    border-right: solid 2px black;
+    border-top-left-radius: 20px;
+}
+
+#waterBoilWarm {
+    transition: 3s;
+    height: 90%;
+    width: 50%;
+    margin: 5px;
+    border-right: solid 2px black;
+    border-top-left-radius: 20px;
+    background-color: rgb(220, 86, 8);
+}
+
+#waterBoilEmpty{
+    transition: 2s;
+    height: 90%;
+    width: 50%;
+    margin: 5px;
+    border-right: solid 2px black;
+    border-top-left-radius: 20px;
+    background-color: rgb(242, 242, 242);
+}
+#coffeeCase{
+    margin: 5px;
+    height: 90%;
+    width: 50%;
+    background-color: rgb(233, 230, 226);
+    border-right: solid 2px black;
+    border-top-right-radius: 20px;
+    background-image:url("https://png.pngtree.com/element_pic/00/16/07/05577bcc014c187.jpg");
+    background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#coffeeCaseEmpty{
+    transition: 2s;
+    margin: 5px;
+    height: 90%;
+    width: 50%;
+    background-color: rgb(233, 230, 226);
+    border-right: solid 2px black;
+    border-top-right-radius: 20px;
+    background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+button{
+    background-color: brown;
+    width: 100%;
+    border-radius: 10px;
+    color: blanchedalmond;
+
+}
+#monitorBox{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#monitor{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    height:50%;
+    width: 100%;
+    background-color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    border: solid 2px black;
+}
+#timer  {
+        border: solid 2px black;
+        height:50%;
+        width: 30%;
+        background-color: antiquewhite;
+        text-align: center;
+        justify-content: center;
+    }
+
+#mugCase{
+    margin: 5px;
+    height: 45%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px ;
+    border: solid black 2px;
+    background-color:rgb(225, 221, 216) ;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#mugCaseWithMug{
+    transition: 1s;
+    margin: 5px;
+    height: 45%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px ;
+    border: solid black 2px;
+    background-color:rgb(225, 221, 216) ;
+    background-image: url(https://img.freepik.com/vecteurs-premium/tasse-cafe-vide-verre-isolee-fond-transparent-mug-verre-double-paroi-boisson-chaude-cappuccino-latte-maquette-pour-publicite-marque-illustration-realiste-3d-vectorielle_545793-427.jpg?w=1060);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#mugCaseWithMugFull{
+    margin: 5px;
+    height: 45%;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px ;
+    border: solid black 2px;
+    background-image: url("https://img.freepik.com/vecteurs-libre/latte-chaud-mousseux-dans-verre-transparent_1308-164562.jpg?ga=GA1.1.1276479760.1727107225&semt=ais_hybrid");
+    background-color:rgb(225, 221, 216) ;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
