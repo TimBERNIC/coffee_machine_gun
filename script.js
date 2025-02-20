@@ -9,24 +9,23 @@ const timer = document.getElementById("timer");
 const wait = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
-const pts = ["....", ".", "...", ".."];
+
+async function generateMonitorMessage(content) {
+  for (let i = 1; i < 4; i++) {
+    monitor.textContent = `${content}${".".repeat(i)}`;
+    timer.textContent = i;
+    await wait(1000);
+  }
+}
 
 //Que l'eau boue
-async function boiledWater() {
+async function boilingWater() {
   try {
     waterBoil.setAttribute("id", "waterBoilWarm");
     mugCase.setAttribute("id", "mugCaseWithMug");
     monitor.textContent = "Etape 1/3, chauffage de l'eau";
     await wait(1000);
-    const BoiledMessage = (point) => {
-      monitor.textContent = `l'eau est en train de chauffer ${point}`;
-    };
-
-    for (let i = 3; i > 0; i--) {
-      BoiledMessage(pts[i]);
-      timer.textContent = i;
-      await wait(1000);
-    }
+    await generateMonitorMessage("L'eau est en train de chauffer");
   } catch (error) {
     console.error("Erreur lors du chauffage de l'eau:", error.message);
     monitor.textContent("Erreur lors du chauffage de l'eau.");
@@ -38,15 +37,7 @@ async function crushCoffee() {
   try {
     monitor.textContent = "Etape 2/3, moulure du café";
     await wait(1000);
-    const crushMessage = (point) => {
-      monitor.textContent = `Début de la procédure de moulure ${point}`;
-    };
-
-    for (let i = 3; i > 0; i--) {
-      crushMessage(pts[i]);
-      timer.textContent = i;
-      await wait(1000);
-    }
+    await generateMonitorMessage("Début de la procédure de moulure");
     coffeeCase.setAttribute("id", "coffeeCaseEmpty");
   } catch (error) {
     console.error("Erreur lors de la procédure de moulure:", error.message);
@@ -60,14 +51,7 @@ async function runningRistretto() {
     monitor.textContent = "Etape 3/3, coulage";
     waterBoil.setAttribute("id", "waterBoilEmpty");
     await wait(1000);
-    const runningMessage = (point) => {
-      monitor.textContent = `café en cours de préparation ${point}`;
-    };
-    for (let i = 3; i > 0; i--) {
-      runningMessage(pts[i]);
-      timer.textContent = i;
-      await wait(1000);
-    }
+    await generateMonitorMessage("café en cours de préparation");
     mugCase.setAttribute("id", "mugCaseWithMugFull");
   } catch (error) {
     console.error("Erreur lors de la préparation :", error.message);
@@ -76,18 +60,12 @@ async function runningRistretto() {
   }
 }
 // Fonction globale lancement
-async function newRistretto() {
+async function runNewRistretto() {
   try {
-    const newMessage = (point) => {
-      monitor.textContent = `Votre commande à bien été prise en compte, veuillez patienter ${point}`;
-    };
-
-    for (let i = 3; i > 0; i--) {
-      newMessage(pts[i]);
-      timer.textContent = i;
-      await wait(1000);
-    }
-    await boiledWater();
+    await generateMonitorMessage(
+      "Votre commande à bien été prise en compte, veuillez patienter"
+    );
+    await boilingWater();
     await crushCoffee();
     await runningRistretto();
     timer.textContent = 0;
@@ -99,4 +77,4 @@ async function newRistretto() {
   }
 }
 
-launcher.addEventListener("click", newRistretto);
+launcher.addEventListener("click", runNewRistretto);

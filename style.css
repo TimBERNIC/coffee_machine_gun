@@ -104,21 +104,25 @@ button{
     align-items: center;
 }
 #monitor{
+    display: flex;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 12px;
     height:100px;
     width: 300px;
     background-color: antiquewhite;
     text-align: center;
+    align-items: center;
     justify-content: center;
     border: solid 2px black;
 }
 #timer  {
+    display: flex;
         border: solid 2px black;
         height:100px;
         width: 300px;
         background-color: antiquewhite;
         text-align: center;
+        align-items: center;
         justify-content: center;
     }
 
